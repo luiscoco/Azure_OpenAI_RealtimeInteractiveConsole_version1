@@ -56,6 +56,9 @@ Now we create a AI model deployment
 
 ![image](https://github.com/user-attachments/assets/4a7ff54f-fa43-4cba-b4fd-8a68270243b8)
 
+We copy the Endpoint URL and API Key for using them in the C# Console Application
+
+![image](https://github.com/user-attachments/assets/62dcd5e0-4a04-46e3-a71d-4c9dbcfde3b4)
 
 
 ## 1. (Option 2) We get the OpenAI Key
