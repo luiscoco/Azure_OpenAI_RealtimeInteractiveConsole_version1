@@ -8,6 +8,9 @@ And see this application sample in this github repo:
 
 https://github.com/Azure-Samples/aoai-realtime-audio-sdk/tree/main/dotnet
 
+This sample also includes **functions calls**:
+
+https://github.com/robch/openai-realtime-chat-with-functions-cs
 
 ## 1. Introduction
 
