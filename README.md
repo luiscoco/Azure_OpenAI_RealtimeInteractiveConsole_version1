@@ -1,4 +1,4 @@
-# AzureOpenAI(or OpenAI) RealTime Console App with Live Audio Input and Output
+# Azure OpenAI GPT-4o Realtime Conversation Chatbot
 
 For more information visit this site: https://github.com/Azure-Samples/aoai-realtime-audio-sdk 
 
