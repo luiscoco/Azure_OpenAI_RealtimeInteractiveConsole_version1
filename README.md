@@ -1,4 +1,4 @@
-# Azure OpenAI GPT-4o Realtime Conversation Chatbot
+# Azure OpenAI GPT-4o Realtime AI model (gpt-4o-realtime-preview)
 
 For more information visit this site: https://github.com/Azure-Samples/aoai-realtime-audio-sdk 
 
