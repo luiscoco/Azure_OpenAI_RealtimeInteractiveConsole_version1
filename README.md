@@ -1,4 +1,4 @@
-# RealTime Console App with Live Audio Input and Output (AI models: AzureOpenAI or OpenAI)
+# AzureOpenAI(or OpenAI) RealTime Console App with Live Audio Input and Output
 
 This short console application demonstrates an interactive experience using the `NAudio` library (https://github.com/naudio/NAudio) for input and output from the default microphone and speaker. 
 
