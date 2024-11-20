@@ -13,10 +13,24 @@ This sample also includes **functions calls**: https://github.com/robch/openai-r
 This short console application demonstrates an interactive experience using the **NAudio** library (https://github.com/naudio/NAudio) for input and output from the default **microphone** and **speaker**
 
 
-## 1. (Option 1)
+## 1. (Option 1) We get the AzureOpenAI EndPoint and Key
+
+We login in Azure Portal and create an Azure OpenAI Service and then create a new Deployment (gpt-4o-realtime-preview)
+
+I will explain you in more detail the steps to follow
+
+First we create the Azure OpenAI service
+
+Then we enter the ResourceGroup, servicename, location, service tier, and create the service
+
+Then we navigate to manage deployments and we create a new ai model (gpt-4o-realtime-preview) deployment 
+
+After the deployment is completed we are provide the EndPoint URL and the Key. We copy both to include in our C# Console Application
 
 
-## 1. (Option 2)
+
+## 1. (Option 2) We get the OpenAI Key
+
 
 
 ## 2. We create a C# Console Application with Visual Studio 2022
