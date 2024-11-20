@@ -1,14 +1,18 @@
 # AzureOpenAI(or OpenAI) RealTime Console App with Live Audio Input and Output
 
-For more information see this information: 
+For more information visit this site: https://github.com/Azure-Samples/aoai-realtime-audio-sdk 
 
-openai-dotnet: the official OpenAI library for .NET
+Also you can see this youtube video: openai-dotnet: https://www.youtube.com/watch?v=MkDJAl57reo (the official OpenAI library for .NET)
 
-https://www.youtube.com/watch?v=MkDJAl57reo
+And see this application sample in this github repo: 
 
 https://github.com/Azure-Samples/aoai-realtime-audio-sdk/tree/main/dotnet
 
+
+## 1. Introduction
+
 This short console application demonstrates an interactive experience using the **NAudio** library (https://github.com/naudio/NAudio) for input and output from the default **microphone** and **speaker**
+
 
 ## 1. (Option 1)
 
