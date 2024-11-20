@@ -56,6 +56,12 @@ Now we create a AI model deployment
 
 ![image](https://github.com/user-attachments/assets/4a7ff54f-fa43-4cba-b4fd-8a68270243b8)
 
+![image](https://github.com/user-attachments/assets/66079e08-c384-4f73-a31c-9b84f698311d)
+
+![image](https://github.com/user-attachments/assets/10da5431-7c9e-4fbd-89d2-11a5524100b3)
+
+**IMPORTANT NOTE**: confirm the Region to deploy the AI model is the same as you chose when creating the Azure OpenAI service
+
 We copy the Endpoint URL and API Key for using them in the C# Console Application
 
 ![image](https://github.com/user-attachments/assets/62dcd5e0-4a04-46e3-a71d-4c9dbcfde3b4)
