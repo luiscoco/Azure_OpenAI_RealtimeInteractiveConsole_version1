@@ -401,7 +401,57 @@ Clears any buffered data in the stream
 
 Throws a NotImplementedException because there is no concept of flushing in this implementation
 
-## 4.6. 
+## 4.6. Reading the Audio Data
+
+This code defines the **Read** method, which **reads audio data from a circular buffer** (_buffer) into a user-provided buffer
+
+This method is essential for streaming applications where **audio data is continuously captured** into a circular buffer and needs to be processed or **consumed in chunks** by other parts of the system
+
+The method retrieves a specified number of bytes (count) of audio data from the circular buffer, handling wrap-around if needed, and ensures thread safety during the read operation
+
+**Key Behaviors**:
+
+Blocking Read: If insufficient data is available, the method waits until enough data is present in the buffer
+
+Thread Safety: Uses a lock to prevent concurrent modifications to the buffer during read operations
+
+Circular Buffer Management: Efficiently handles cases where the read request spans the end and beginning of the circular buffer
+
+```csharp
+public override int Read(byte[] buffer, int offset, int count)
+{
+    int totalCount = count;
+
+    int GetBytesAvailable() => _bufferWritePos < _bufferReadPos
+        ? _bufferWritePos + (_buffer.Length - _bufferReadPos)
+        : _bufferWritePos - _bufferReadPos;
+
+    while (GetBytesAvailable() < count)
+    {
+        Thread.Sleep(100);
+    }
+
+    lock (_bufferLock)
+    {
+        if (_bufferReadPos + count >= _buffer.Length)
+        {
+            int bytesBeforeWrap = _buffer.Length - _bufferReadPos;
+            Array.Copy(_buffer, _bufferReadPos, buffer, offset, bytesBeforeWrap);
+            _bufferReadPos = 0;
+            count -= bytesBeforeWrap;
+            offset += bytesBeforeWrap;
+        }
+
+        Array.Copy(_buffer, _bufferReadPos, buffer, offset, count);
+        _bufferReadPos += count;
+    }
+
+    return totalCount;
+}
+```
+
+## 4.7. 
+
 
 
 ## 5. We create the 
