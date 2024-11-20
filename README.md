@@ -1,16 +1,12 @@
 # Azure OpenAI GPT-4o Realtime AI model (gpt-4o-realtime-preview)
 
-For more information visit this site: https://github.com/Azure-Samples/aoai-realtime-audio-sdk 
+For **more information** visit this site: https://github.com/Azure-Samples/aoai-realtime-audio-sdk 
 
-Also you can see this youtube video: openai-dotnet: https://www.youtube.com/watch?v=MkDJAl57reo (the official OpenAI library for .NET)
+Also you can see this **youtube video**: openai-dotnet: https://www.youtube.com/watch?v=MkDJAl57reo (the official OpenAI library for .NET)
 
-And see this application sample in this github repo: 
+And see this **application sample** in this github repo: https://github.com/Azure-Samples/aoai-realtime-audio-sdk/tree/main/dotnet
 
-https://github.com/Azure-Samples/aoai-realtime-audio-sdk/tree/main/dotnet
-
-This sample also includes **functions calls**:
-
-https://github.com/robch/openai-realtime-chat-with-functions-cs
+This sample also includes **functions calls**: https://github.com/robch/openai-realtime-chat-with-functions-cs
 
 ## 1. Introduction
 
