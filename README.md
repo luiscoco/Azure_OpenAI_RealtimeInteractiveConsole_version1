@@ -56,13 +56,7 @@ Now we create a AI model deployment
 
 ![image](https://github.com/user-attachments/assets/4a7ff54f-fa43-4cba-b4fd-8a68270243b8)
 
-![image](https://github.com/user-attachments/assets/84fe0b61-5a1d-4a11-bc28-95721889ce9b)
 
-![image](https://github.com/user-attachments/assets/83f84191-558b-466a-8710-5b10a14143cd)
-
-Select the Region where you deployed your Azure OpenAI, only the regions with quota are availe 
-
-![image](https://github.com/user-attachments/assets/0f80adc3-fe88-46fa-bf43-1f997586ab83)
 
 ## 1. (Option 2) We get the OpenAI Key
 
