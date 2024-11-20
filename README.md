@@ -10,9 +10,21 @@ This sample also includes **functions calls**: https://github.com/robch/openai-r
 
 ## 1. Introduction
 
+This application is a **real-time audio-based conversational system** using **Azure OpenAI** services
+
+It connects to the Azure OpenAI platform and allows users to have voice conversations with an AI model in real-time
+
 This short console application demonstrates an interactive experience using the **NAudio** library (https://github.com/naudio/NAudio) for input and output from the default **microphone** and **speaker**
 
-## 1. (Option 1) We get the AzureOpenAI EndPoint and Key
+This application acts as a **real-time**, **voice-enabled AI assistant** powered by **Azure OpenAI**
+
+It integrates voice input and output seamlessly, providing an interactive and hands-free user experience
+
+The event-driven architecture ensures low latency and responsiveness, making it suitable for conversational interfaces, customer support bots, or accessibility tools.
+
+
+
+## 2. (Option 1) We get the AzureOpenAI EndPoint and Key
 
 We login in Azure Portal and create an Azure OpenAI Service and then create a new Deployment (gpt-4o-realtime-preview)
 
@@ -67,9 +79,9 @@ We copy the Endpoint URL and API Key for using them in the C# Console Applicatio
 ![image](https://github.com/user-attachments/assets/62dcd5e0-4a04-46e3-a71d-4c9dbcfde3b4)
 
 
-## 1. (Option 2) We get the OpenAI Key
+## 2. (Option 2) We get the OpenAI Key
 
-### 1.1. Sign up or Log in to the OpenAI platform
+### 2.1. Sign up or Log in to the OpenAI platform
 
 In the internet browser we navigate to the OpenAI platform URL: **https://platform.openai.com/**
 
@@ -81,7 +93,7 @@ We **create a new account** or if we already have one we **log in** to our accou
 
 ![image](https://github.com/luiscoco/ChatGPT_OpenAI-Sample1-QuickStart/assets/32194879/193d0d27-0396-4fdf-8ba2-ed614d1b7f33)
 
-### 1.2. Account settings (set the payment method and spend limit)
+### 2.2. Account settings (set the payment method and spend limit)
 
 We select the **Settings->Billing** option in the left hand side menu
 
@@ -105,7 +117,7 @@ https://platform.openai.com/account/limits
 
 ![image](https://github.com/luiscoco/ChatGPT_OpenAI-Sample1-QuickStart/assets/32194879/d1418bb6-2e7a-41c9-a745-1b898fa90380)
 
-### 1.3. Create API Key
+### 2.3. Create API Key
 
 We have to create an API Key in order to authorize when we send the API request
 
@@ -113,18 +125,18 @@ We have to create an API Key in order to authorize when we send the API request
 
 We copy and store the API Key value, we will need to introduce this value in the API header to authorize the service
 
-## 2. We create a C# Console Application with Visual Studio 2022
+## 3. We create a C# Console Application with Visual Studio 2022
 
 
 
-## 3. We load the Nuget packages
+## 4. We load the Nuget packages
 
 
-## 4. We create the MicrophoneAudioStream file
+## 5. We create the MicrophoneAudioStream file
 
 The class, **MicrophoneAudioStream**, acts as a custom **Audio Stream Capturing Live Audio** data from a **microphone** using the **NAudio** library
 
-### 4.1. Audio Stream Basics 
+### 5.1. Audio Stream Basics 
 
 The class **MicrophoneAudioStream** extends **Stream**, providing custom implementations for reading audio data. It also implements **IDisposable** to manage resources
 
@@ -141,7 +153,7 @@ private const int SAMPLES_PER_SECOND = 24000;
 private const int BYTES_PER_SAMPLE = 2;
 private const int CHANNELS = 1;
 ```
-### 4.2. Audio Buffer
+### 5.2. Audio Buffer
 
 A **circular buffer** (_buffer) holds raw audio data. Its size is set to **store up to 10 seconds of audio**
 
@@ -156,7 +168,7 @@ private int _bufferReadPos = 0;
 private int _bufferWritePos = 0;
 ```
 
-### 4.3. WaveInEvent for Audio Capture
+### 5.3. WaveInEvent for Audio Capture
 
 The class uses **WaveInEvent** from **NAudio** to **capture audio** data from a microphone
 
@@ -166,7 +178,7 @@ When new audio data becomes available (**DataAvailable** event), the data is wri
 
 If the **buffer is full**, older **data is overwritten** (wrap-around behavior)
 
-## 4.4. Setting up and Starting the Microphone Audio Stream
+## 5.4. Setting up and Starting the Microphone Audio Stream
 
 This snippet is part of the **MicrophoneAudioStream class** and is responsible for **setting up and starting the microphone audio stream** using the **NAudio** library
 
@@ -292,7 +304,7 @@ We can also review the whole code in this section:
  public static MicrophoneAudioStream Start() => new();
 ```
 
-## 4.5. Properties and methods required by the Stream base class
+## 5.5. Properties and methods required by the Stream base class
 
 This code defines how the **MicrophoneAudioStream** interacts with the **Stream API**:
 
@@ -363,7 +375,7 @@ Clears any buffered data in the stream
 
 Throws a NotImplementedException because there is no concept of flushing in this implementation
 
-## 4.6. Reading the Audio Data
+## 5.6. Reading the Audio Data
 
 This code defines the **Read** method, which **reads audio data from a circular buffer** (_buffer) into a user-provided buffer
 
@@ -412,7 +424,7 @@ public override int Read(byte[] buffer, int offset, int count)
 }
 ```
 
-### 4.7. Unimplemented Methods and Resource Cleanup
+### 5.7. Unimplemented Methods and Resource Cleanup
 
 **Unimplemented Methods**: Methods like **Seek**, **SetLength**, and **Write** are not relevant for the stream's functionality and are deliberately left unimplemented
 
@@ -471,7 +483,7 @@ protected override void Dispose(bool disposing)
 }
 ```
 
-## 5. We create the SpeakerOutput file
+## 6. We create the SpeakerOutput file
 
 This C# code defines a class **SpeakerOutput** that uses the **NAudio** library to **play audio** through the system's speakers
 
@@ -592,7 +604,7 @@ public class SpeakerOutput : IDisposable
 }
 ```
 
-## 6. We configure the middleware(Program.cs)
+## 7. We configure the middleware(Program.cs)
 
 ```csharp
 using Azure.AI.OpenAI;
@@ -800,7 +812,7 @@ public class Program
 }
 ```
 
-## 7. We run the application and verify the results
+## 8. We run the application and verify the results
 
 ![image](https://github.com/user-attachments/assets/fd46a0d7-844d-4267-a481-0bff2188ef59)
 
@@ -808,7 +820,7 @@ When we ask the assistant to finish the conversation the **Finish tool** is invo
 
 ![image](https://github.com/user-attachments/assets/b013b903-cd2e-4ac3-998a-54b21b972b75)
 
-## 8. Additional information
+## 9. Additional information
 
 This sample uses two rudimentary multimedia abstractions built atop the **NAudio** library:
 
