@@ -1,39 +1,7 @@
-# OpenAI .NET: /realtime basic console app with live audio input and output
+# RealTime Console App with Live Audio Input and Output (AI models: AzureOpenAI or OpenAI)
 
 This short console application demonstrates an interactive experience using the `NAudio` library (https://github.com/naudio/NAudio) for input and output from the default microphone and speaker. 
 
-## Usage
-
-1. Set the `AZURE_OPENAI_ENDPOINT` and `AZURE_OPENAI_API_KEY` environment variables to match your `/realtime`-enabled Azure OpenAI resource
-  - Alternatively, if your Azure OpenAI Service resource is configured for managed identity, you can set the `AZURE_OPENAI_USE_ENTRA` environment variable to `true` to employ `DefaultAzureCredential` token-based authentication
-  - If you'd like to use the non-Azure OpenAI v1 endpoint, don't set `AZURE_OPENAI_ENDPOINT` and use `OPENAI_API_KEY` as the source for authentication, instead
-2. `dotnet run` (or build/run from `RealtimeInteractiveConsole.csproj`)
-
-Example output:
-
-```
-PS D:\s\dotnet\samples\console> dotnet run
- * Connecting to Azure OpenAI endpoint (AZURE_OPENAI_ENDPOINT): https://my-aoai-resource-eastus2.openai.azure.com/
- * Using API key (AZURE_OPENAI_API_KEY): abc12**
- * Using deployment (AZURE_OPENAI_DEPLOYMENT): my-gpt-4o-realtime-preview-deployment
- <<< Connected: session started
- >>> Listening to microphone input
- >>> (Just tell the app you're done to finish)
-
- <<< Start of speech detected
- <<< End of speech detected
-Sure! >>> USER: Hi, can you tell me a short joke?
-
- How about a classic one:
-
-Why don't scientists trust atoms?
-
-Because they make up everything! 😄
- <<< Start of speech detected
- <<< End of speech detected
-
- <<< Finish tool invoked -- ending conversation!
-```
 
 ## Code explanation/walkthrough
 
