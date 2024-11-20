@@ -127,7 +127,27 @@ We copy and store the API Key value, we will need to introduce this value in the
 
 ## 3. We create a C# Console Application with Visual Studio 2022
 
+We run Visual Studio 2022 Community Edition and we create a new project
 
+![image](https://github.com/user-attachments/assets/fe8c9d04-0aa6-46d6-8fb1-6c11f4943b9a)
+
+We select the C# Console project template
+
+![image](https://github.com/user-attachments/assets/c81aa9f7-bacb-4357-bc33-054a45861817)
+
+We input the project name and location and press the Next button
+
+![image](https://github.com/user-attachments/assets/f6fc749f-d686-48e3-ab76-08afe5f74b5f)
+
+We also select the **.NET 9** framework and press the Create button
+
+![image](https://github.com/user-attachments/assets/a9ea8ec6-00e0-41a6-946f-e09335fcdb45)
+
+We review the application folders and files structure
+
+![image](https://github.com/user-attachments/assets/b9ee83c4-26ea-441b-a579-eebfd7d8cadd)
+
+**NOTE**: the files **MicrophoneAudioStream.cs** and **SpeakerOutput.cs** will be created in the following sections in this document
 
 ## 4. We load the Nuget packages
 
