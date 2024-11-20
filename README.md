@@ -722,10 +722,7 @@ public class Program
 
 ## 7. We run the application and verify the results
 
-
-
-
-
+![image](https://github.com/user-attachments/assets/fd46a0d7-844d-4267-a481-0bff2188ef59)
 
 ## 8. Additional information
 
