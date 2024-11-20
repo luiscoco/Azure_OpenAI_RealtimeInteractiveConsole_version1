@@ -724,6 +724,10 @@ public class Program
 
 ![image](https://github.com/user-attachments/assets/fd46a0d7-844d-4267-a481-0bff2188ef59)
 
+When we ask the assistant to finish the conversation the **Finish tool** is invoked
+
+![image](https://github.com/user-attachments/assets/b013b903-cd2e-4ac3-998a-54b21b972b75)
+
 ## 8. Additional information
 
 This sample uses two rudimentary multimedia abstractions built atop the **NAudio** library:
