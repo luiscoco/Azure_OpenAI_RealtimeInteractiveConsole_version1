@@ -131,6 +131,15 @@ We copy and store the API Key value, we will need to introduce this value in the
 
 ## 4. We load the Nuget packages
 
+![image](https://github.com/user-attachments/assets/7a11d7fc-11e0-429e-8f03-a543b2879cba)
+
+**Azure.AI.OpenAI**: Provides AI capabilities (e.g., GPT-4, Whisper) through Azure services
+
+**Azure.Identity**: Simplifies secure authentication for accessing Azure OpenAI endpoints
+
+**NAudio**: Facilitates real-time audio capture and playback for interaction with the AI
+
+Together, these libraries enable your application to implement **real-time, voice-enabled AI conversations** with seamless audio input/output and secure cloud integration
 
 ## 5. We create the MicrophoneAudioStream file
 
