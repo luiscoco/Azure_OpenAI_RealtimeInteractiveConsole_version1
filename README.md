@@ -393,6 +393,78 @@ protected override void Dispose(bool disposing)
 
 ## 5. We create the SpeakerOutput file
 
+This C# code defines a class **SpeakerOutput** that uses the **NAudio** library to **play audio** through the system's speakers
+
+The **SpeakerOutput** class facilitates audio playback by buffering and queuing audio data, then playing it using WaveOutEvent from the NAudio library
+
+It provides methods to enqueue audio data for playback, clear the buffer, and manage resource cleanup
+
+**Key Components**
+
+**BufferedWaveProvider (_waveProvider)**:
+
+Acts as a buffer to hold audio data for playback
+
+It is configured with a specific audio format (WaveFormat) to define playback properties like sample rate, bit depth, and number of channels
+
+**WaveOutEvent (_waveOutEvent)**:
+
+Manages audio playback on the speaker
+
+It initializes with the BufferedWaveProvider to continuously play the buffered audio
+
+**Methods**
+
+**Constructor (SpeakerOutput)**:
+
+Sets up the audio format with a sample rate of 24,000 Hz, 16-bit depth, and mono (1 channel)
+
+Creates a BufferedWaveProvider with a 2-minute buffer duration
+
+Initializes the WaveOutEvent to play audio from the buffer
+
+**EnqueueForPlayback**:
+
+Accepts audio data (BinaryData) as input
+
+Converts the data to a byte array and adds it to the _waveProvider buffer for playback
+
+Handles null or empty audio data gracefully by logging a warning
+
+**ClearPlayback**:
+
+Clears any buffered audio data in _waveProvider, stopping current playback and removing queued audio
+
+**Dispose**:
+
+Cleans up resources by disposing of the WaveOutEvent object, releasing system resources used for audio playback
+
+**Usage**
+
+This class is useful in scenarios where you need to dynamically queue and play audio, such as real-time audio streams or audio notifications
+
+**Example usage**:
+
+**Instantiate** SpeakerOutput
+
+Call **EnqueueForPlayback** with binary audio data to play it
+
+Use **ClearPlayback** to stop playback and clear the buffer
+
+Always call **Dispose** to release resources when done
+
+**Practical Details**
+
+WaveFormat: Configures the playback format (e.g., 24000 Hz mono)
+
+Buffering: Allows queuing audio data to ensure smooth playback even if input data arrives asynchronously
+
+Error Handling: Warns about invalid audio input but does not throw exceptions, making it robust for real-time use
+
+This class encapsulates low-level audio management in a straightforward API, leveraging NAudio's functionality to simplify audio playback operations
+
+We can review the whole code for playing the audio
+
 ```csharp
 using NAudio.Wave;
 
