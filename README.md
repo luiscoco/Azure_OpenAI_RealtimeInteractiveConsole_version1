@@ -332,6 +332,65 @@ public override int Read(byte[] buffer, int offset, int count)
 }
 ```
 
+### 4.7. Unimplemented Methods and Resource Cleanup
+
+**Unimplemented Methods**: Methods like **Seek**, **SetLength**, and **Write** are not relevant for the stream's functionality and are deliberately left unimplemented
+
+**Resource Cleanup**: The Dispose method ensures proper cleanup of resources, especially the WaveInEvent instance, when the object is no longer in use
+
+The **Seek** method is used to change the current position within a stream
+
+It is not implemented because seeking is irrelevant for a real-time audio stream
+
+A NotImplementedException is thrown if this method is called
+
+```csharp
+public override long Seek(long offset, SeekOrigin origin)
+{
+    throw new NotImplementedException();
+}
+```
+
+The **SetLength** method is used to set the length of a stream
+
+It is not implemented because the length of a real-time audio stream is dynamic and cannot be predetermined or set
+
+Throws a NotImplementedException if called
+
+```csharp
+public override void SetLength(long value)
+{
+    throw new NotImplementedException();
+}
+```
+
+The **Write** method allows data to be written to a stream
+
+Not implemented because the MicrophoneAudioStream is read-only, intended only for reading audio data
+
+Throws a NotImplementedException if called
+
+```csharp
+public override void Write(byte[] buffer, int offset, int count)
+{
+    throw new NotImplementedException();
+}
+```
+
+**Dispose** method releases resources when the stream is no longer needed
+
+Disposes the _waveInEvent object to release the microphone resource and any unmanaged resources used by NAudio
+
+Calls the base class Dispose method to ensure proper disposal of the parent class
+
+```csharp
+protected override void Dispose(bool disposing)
+{
+    _waveInEvent?.Dispose();
+    base.Dispose(disposing);
+}
+```
+
 ## 5. We create the SpeakerOutput file
 
 ```csharp
